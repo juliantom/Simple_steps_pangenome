@@ -1,0 +1,3 @@
+GCF_900698975_1_000000000001	NZ_LR217722.1 Buchnera aphidicola (Cinara splendens) strain BuCisplendens voucher 3004 chromosome 1
+GCF_900698975_1_000000000002	NZ_LR217723.1 Buchnera aphidicola (Cinara splendens) strain BuCisplendens voucher 3004 plasmid pLeu
+GCF_900698975_1_000000000003	NZ_LR217724.1 Buchnera aphidicola (Cinara splendens) strain BuCisplendens voucher 3004 plasmid pTrp

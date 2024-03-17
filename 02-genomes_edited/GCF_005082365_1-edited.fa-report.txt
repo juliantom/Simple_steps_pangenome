@@ -1,0 +1,2 @@
+GCF_005082365_1_000000000001	NZ_CP034900.1 Buchnera aphidicola (Artemisaphis artemisicola) strain Aar chromosome
+GCF_005082365_1_000000000002	NZ_CP034901.1 Buchnera aphidicola (Artemisaphis artemisicola) strain Aar plasmid pLeu, complete sequence

@@ -1,0 +1,3 @@
+GCF_005081185_1_000000000001	NZ_CP034870.1 Buchnera aphidicola (Lipaphis pseudobrassicae) strain Lps chromosome
+GCF_005081185_1_000000000002	NZ_CP034871.1 Buchnera aphidicola (Lipaphis pseudobrassicae) strain Lps plasmid pLeu
+GCF_005081185_1_000000000003	NZ_CP034872.1 Buchnera aphidicola (Lipaphis pseudobrassicae) strain Lps plasmid pTrp

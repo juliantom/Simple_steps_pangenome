@@ -1,0 +1,3 @@
+GCF_005080825_1_000000000001	NZ_CP034852.1 Buchnera aphidicola (Thelaxes californica) strain Tca chromosome
+GCF_005080825_1_000000000002	NZ_CP034853.1 Buchnera aphidicola (Thelaxes californica) strain Tca plasmid pLeu, complete sequence
+GCF_005080825_1_000000000003	NZ_CP034854.1 Buchnera aphidicola (Thelaxes californica) strain Tca plasmid pTrp, complete sequence

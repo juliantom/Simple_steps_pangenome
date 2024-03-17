@@ -1,0 +1,3 @@
+GCF_005081705_1_000000000001	NZ_CP034876.1 Buchnera aphidicola (Hyperomyzus lactucae) strain Hla chromosome
+GCF_005081705_1_000000000002	NZ_CP034877.1 Buchnera aphidicola (Hyperomyzus lactucae) strain Hla plasmid pLeu, complete sequence
+GCF_005081705_1_000000000003	NZ_CP034878.1 Buchnera aphidicola (Hyperomyzus lactucae) strain Hla plasmid pTrp, complete sequence

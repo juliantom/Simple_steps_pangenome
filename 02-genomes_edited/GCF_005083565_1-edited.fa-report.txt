@@ -1,0 +1,3 @@
+GCF_005083565_1_000000000001	NZ_CP034891.1 Buchnera aphidicola (Acyrthosiphon lactucae) strain Ala chromosome, complete genome
+GCF_005083565_1_000000000002	NZ_CP034892.1 Buchnera aphidicola (Acyrthosiphon lactucae) strain Ala plasmid pLeu, complete sequence
+GCF_005083565_1_000000000003	NZ_CP034893.1 Buchnera aphidicola (Acyrthosiphon lactucae) strain Ala plasmid pTrp

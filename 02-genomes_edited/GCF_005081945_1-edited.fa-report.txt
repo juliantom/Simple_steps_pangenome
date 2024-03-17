@@ -1,0 +1,3 @@
+GCF_005081945_1_000000000001	NZ_CP034879.1 Buchnera aphidicola (Brachycaudus cardui) strain Bca chromosome
+GCF_005081945_1_000000000002	NZ_CP034880.1 Buchnera aphidicola (Brachycaudus cardui) strain Bca plasmid pLeu, complete sequence
+GCF_005081945_1_000000000003	NZ_CP034881.1 Buchnera aphidicola (Brachycaudus cardui) strain Bca plasmid pTrp, complete sequence

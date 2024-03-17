@@ -1,0 +1,3 @@
+GCF_005082825_1_000000000001	NZ_CP034882.1 Buchnera aphidicola (Brevicoryne brassicae) strain Bbr chromosome
+GCF_005082825_1_000000000002	NZ_CP034883.1 Buchnera aphidicola (Brevicoryne brassicae) strain Bbr plasmid pLeu
+GCF_005082825_1_000000000003	NZ_CP034884.1 Buchnera aphidicola (Brevicoryne brassicae) strain Bbr plasmid pTrp, complete sequence
