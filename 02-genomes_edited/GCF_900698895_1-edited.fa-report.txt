@@ -1,3 +1,0 @@
-GCF_900698895_1_000000000001	NZ_LR217700.1 Buchnera aphidicola (Cinara curtihirsuta) strain BuCicurtihirsuta voucher 3053 chromosome 1
-GCF_900698895_1_000000000002	NZ_LR217701.1 Buchnera aphidicola (Cinara curtihirsuta) strain BuCicurtihirsuta voucher 3053 plasmid pLeu
-GCF_900698895_1_000000000003	NZ_LR217702.1 Buchnera aphidicola (Cinara curtihirsuta) strain BuCicurtihirsuta voucher 3053 plasmid pTrp

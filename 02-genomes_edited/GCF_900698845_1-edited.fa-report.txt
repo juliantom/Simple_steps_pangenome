@@ -1,3 +1,0 @@
-GCF_900698845_1_000000000001	NZ_LR217692.1 Buchnera aphidicola (Cinara cf. splendens/pseudotsugae 3390) strain BuCisplendens/pseudotsugae voucher 3390 chromosome 1
-GCF_900698845_1_000000000002	NZ_LR217693.1 Buchnera aphidicola (Cinara cf. splendens/pseudotsugae 3390) strain BuCisplendens/pseudotsugae voucher 3390 plasmid pLeu
-GCF_900698845_1_000000000003	NZ_LR217694.1 Buchnera aphidicola (Cinara cf. splendens/pseudotsugae 3390) strain BuCisplendens/pseudotsugae voucher 3390 plasmid pTrp

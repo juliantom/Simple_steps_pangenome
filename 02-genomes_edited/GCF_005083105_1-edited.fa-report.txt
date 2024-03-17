@@ -1,3 +1,0 @@
-GCF_005083105_1_000000000001	NZ_CP034885.1 Buchnera aphidicola (Aphis nerii) strain Ane chromosome
-GCF_005083105_1_000000000002	NZ_CP034886.1 Buchnera aphidicola (Aphis nerii) strain Ane plasmid pLeu, complete sequence
-GCF_005083105_1_000000000003	NZ_CP034887.1 Buchnera aphidicola (Aphis nerii) strain Ane plasmid pTrp, complete sequence

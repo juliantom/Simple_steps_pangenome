@@ -1,3 +1,0 @@
-GCF_900699035_1_000000000001	NZ_LR217739.1 Buchnera aphidicola (Cinara piceae) strain BuCipiceae voucher 3303 chromosome 1
-GCF_900699035_1_000000000002	NZ_LR217740.1 Buchnera aphidicola (Cinara piceae) strain BuCipiceae voucher 3303 plasmid pLeu
-GCF_900699035_1_000000000003	NZ_LR217741.1 Buchnera aphidicola (Cinara piceae) strain BuCipiceae voucher 3303 plasmid pTrp

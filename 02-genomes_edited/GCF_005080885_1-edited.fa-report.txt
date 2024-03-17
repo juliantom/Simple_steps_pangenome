@@ -1,3 +1,0 @@
-GCF_005080885_1_000000000001	NZ_CP034864.1 Buchnera aphidicola (Macrosiphoniella sanborni) strain Msa chromosome
-GCF_005080885_1_000000000002	NZ_CP034865.1 Buchnera aphidicola (Macrosiphoniella sanborni) strain Msa plasmid pLeu, complete sequence
-GCF_005080885_1_000000000003	NZ_CP034866.1 Buchnera aphidicola (Macrosiphoniella sanborni) strain Msa plasmid pTrp, complete sequence

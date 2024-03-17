@@ -1,3 +1,0 @@
-GCF_900560745_1_000000000001	NZ_LR025085.1 Buchnera aphidicola (Cinara strobi) strain BuCistrobi voucher 3249 chromosome 1, complete sequence
-GCF_900560745_1_000000000002	NZ_LR025086.1 Buchnera aphidicola (Cinara strobi) strain BuCistrobi voucher 3249 plasmid pLeu, complete sequence
-GCF_900560745_1_000000000003	NZ_LR025087.1 Buchnera aphidicola (Cinara strobi) strain BuCistrobi voucher 3249 plasmid pTrp

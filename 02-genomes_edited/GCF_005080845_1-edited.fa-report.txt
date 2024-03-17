@@ -1,3 +1,0 @@
-GCF_005080845_1_000000000001	NZ_CP034858.1 Buchnera aphidicola (Rhopalosiphum padi) strain Rpa chromosome, complete genome
-GCF_005080845_1_000000000002	NZ_CP034859.1 Buchnera aphidicola (Rhopalosiphum padi) strain Rpa plasmid pLeu, complete sequence
-GCF_005080845_1_000000000003	NZ_CP034860.1 Buchnera aphidicola (Rhopalosiphum padi) strain Rpa plasmid pTrp

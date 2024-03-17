@@ -1,3 +1,0 @@
-GCF_900698905_1_000000000001	NZ_LR217707.1 Buchnera aphidicola (Cinara kochiana kochiana) strain BuCikochiana voucher 2762 chromosome 1
-GCF_900698905_1_000000000002	NZ_LR217708.1 Buchnera aphidicola (Cinara kochiana kochiana) strain BuCikochiana voucher 2762 plasmid pLeu
-GCF_900698905_1_000000000003	NZ_LR217709.1 Buchnera aphidicola (Cinara kochiana kochiana) strain BuCikochiana voucher 2762 plasmid pTrp

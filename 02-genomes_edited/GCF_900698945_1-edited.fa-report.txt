@@ -1,3 +1,0 @@
-GCF_900698945_1_000000000001	NZ_LR217717.1 Buchnera aphidicola (Cinara laricifoliae) strain BuCilaricifoliae voucher 3058 chromosome 1
-GCF_900698945_1_000000000002	NZ_LR217718.1 Buchnera aphidicola (Cinara laricifoliae) strain BuCilaricifoliae voucher 3058 plasmid pLeu
-GCF_900698945_1_000000000003	NZ_LR217719.1 Buchnera aphidicola (Cinara laricifoliae) strain BuCilaricifoliae voucher 3058 plasmid pTrp

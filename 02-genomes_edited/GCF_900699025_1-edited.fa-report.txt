@@ -1,3 +1,0 @@
-GCF_900699025_1_000000000001	NZ_LR217732.1 Buchnera aphidicola (Cinara pseudotaxifoliae) strain BuCipseudotaxifoliae voucher 3056 chromosome 1
-GCF_900699025_1_000000000002	NZ_LR217733.1 Buchnera aphidicola (Cinara pseudotaxifoliae) strain BuCipseudotaxifoliae voucher 3056 plasmid pLeu
-GCF_900699025_1_000000000003	NZ_LR217734.1 Buchnera aphidicola (Cinara pseudotaxifoliae) strain BuCipseudotaxifoliae voucher 3056 plasmid pTrp

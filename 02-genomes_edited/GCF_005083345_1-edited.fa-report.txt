@@ -1,3 +1,0 @@
-GCF_005083345_1_000000000001	NZ_CP034888.1 Buchnera aphidicola (Aphis nasturtii) strain Ana chromosome
-GCF_005083345_1_000000000002	NZ_CP034889.1 Buchnera aphidicola (Aphis nasturtii) strain Ana plasmid pLeu, complete sequence
-GCF_005083345_1_000000000003	NZ_CP034890.1 Buchnera aphidicola (Aphis nasturtii) strain Ana plasmid pTrp, complete sequence
