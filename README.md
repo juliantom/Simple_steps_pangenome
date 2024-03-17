@@ -1,5 +1,5 @@
 # Simple Pipeline on How to Create a Pangenome with Anvi'o
-The folowing lines describe **simple steps** to create a **pangenome** using anvi'o platform. For an extensive description of the workflow and insights into each program please visit (and read) anvi'o documentation website [Anvi'o pangenome workflow](https://merenlab.org/2016/11/08/pangenomics-v2/). <br> 
+The folowing lines describe **simple steps** to create a **pangenome** using anvi'o platform. For an extensive description of the workflow and insights into each program please visit (and read) anvi'o documentation website [Anvi'o pangenome workflow](https://merenlab.org/2016/11/08/pangenomics-v2/). <br> If you use this pipeline please reference the repository and cite Anvi'o and third party programs accordingly.
 
 ### Pipepline
 1. Install anvi'o if not in your system [Install anvi'o](https://anvio.org/install/) and install ncbi-datasets
