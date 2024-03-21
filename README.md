@@ -5,7 +5,7 @@ The folowing file contains **simple steps** to download genomes and create a **p
 I understand that sometimes we just want to have the code and get the result without worrying about the whys. Although this way of thinking is inadvisable from both a computational and a biological perspective, some of you might find it useful. If you want to understand the reasons for choosing each program and parameter, you can find an extensive description on anvi'o's documentation website [Anvi'o pangenome workflow](https://merenlab.org/2016/11/08/pangenomics-v2/) or dig even deeper into each program reference.
 
 ### Citation
-* If you use this pipeline please acknowledge it by including the link to the repository "https://github.com/juliantom/Simple_steps_pangenome".
+* If you use this pipeline please acknowledge it by including the link to the repository "https<area>://github.com/juliantom/Simple_steps_pangenome".
 * Also, cite Anvi'o and third party programs accordingly.
 
 ### Pipepline
