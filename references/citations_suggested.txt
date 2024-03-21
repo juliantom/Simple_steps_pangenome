@@ -1,0 +1,2 @@
+# Current repository
+https://github.com/juliantom/Simple_steps_pangenome
