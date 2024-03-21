@@ -129,7 +129,7 @@ anvi-run-cazymes -c $contigs_db --num-threads $exec_th # CAZymes
 anvi-run-interacdome -c 03-contigs_db/${g_id}-contigs.db --num-threads $exec_th --output-file-prefix 99-data/${g_id}-interacdome # interaction domains
 anvi-run-kegg-kofams -c 03-contigs_db/${g_id}-contigs.db --num-threads $exec_th # KOfams KEGG
 anvi-run-pfams -c 03-contigs_db/${g_id}-contigs.db --num-threads $exec_th # Pfams
-anvi-run-ncbi-cogs -c 03-contigs_db/${g_id}-contigs.db --num-threads $exec_th # COG20 NCBI COGs
+anvi-run-ncbi-cogs -c 03-contigs_db/${g_id}-contigs.db --num-threads $exec_th --search-with blastp # COG20 NCBI COGs
 done
 ```
 6. Create pangenome.
