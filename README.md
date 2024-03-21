@@ -2,14 +2,14 @@
 The folowing file contains **simple steps** to download genomes and create a **pangenome** using anvi'o platform. 
 
 ### Why did I made this space?
-I recognize that, sometimes, we just want to have the code and get the result while forgetting about the whys. Altough this way of thinking is unidvisable from a computational or biological perspective, some of you might find useful. It might help you overcome fear of the terminal, compare anvi'o results with other program, or simply you just don't want to deal with explanations, or for whatever other reason you might have. In case you want to understand the biological meaning of each program and parameter, an extensive description can be found in anvi'o's documentation website [Anvi'o pangenome workflow](https://merenlab.org/2016/11/08/pangenomics-v2/) or dig even deeper into each program reference.
+I understand that sometimes we just want to have the code and get the result without worrying about the whys. Although this way of thinking is inadvisable from both a computational and a biological perspective, some of you might find it useful. If you want to understand the reasons for choosing each program and parameter, you can find an extensive description on anvi'o's documentation website [Anvi'o pangenome workflow](https://merenlab.org/2016/11/08/pangenomics-v2/) or dig even deeper into each program reference.
 
 ### Citation
 * If you use this pipeline please acknowledge it by including the link to the repository (https://github.com/juliantom/Simple_steps_pangenome).
-* Cite Anvi'o and third party programs accordingly.
+* Also, cite Anvi'o and third party programs accordingly.
 
 ### Pipepline
-1. Check Anvi'o and NCBI *datasets* are installed in your system. If not, you can get them from here: [Anvi'o install](https://anvio.org/install/) and [NCBI datasets install](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/).
+1. Check if Anvi'o and NCBI *datasets* are installed in your system. If not, you can get them from here: [Anvi'o install](https://anvio.org/install/) and [NCBI datasets install](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/).
 ```bash
 # ANVIO
 # Activate anvio and check version. I am using anvio v8.
@@ -30,21 +30,21 @@ anvi-self-test -v
 # DATASETS
 # Easy install (if necessary)
 conda install -c conda-forge ncbi-datasets-cli
-# Check version
+# Check version. datasets version: 16.9.0.
 datasets --version
 ```
 2. Prepare the workspace where the magic will happen.
 ```bash
-# Create and change to a folder of your preference.
+# Create a folder and move there.
 mkdir  ~/Desktop/my_anvio_pangenomes && cd ~/Desktop/my_anvio_pangenomes
 
-# Create working folder and subfolders.
+# Create a working folder and subfolders.
 mkdir -p easy_pangenome/{00-download_genomes,01-genomes_raw,02-genomes_edited,03-contigs_db,04-pangenome,05-pan_summary,99-data}
 
-# Change to working directory.
+# Change to the working folder.
 cd easy_pangenome
 ```
-3. Copy your genomes/MAGs/SAGs/bins in fasta format (e.g. my_genome_1.fa; my_mag_A.fasta) to the subfolder 01-genomes_raw and skip to Step 4. **Optionally** you can download genomes from ncbi. I will use Buchnera as example and download genomes from NCBI.
+3. Copy your genomes/MAGs/SAGs/bins in fasta format (e.g. my_genome_1.fa; my_mag_A.fasta) to the subfolder 01-genomes_raw and skip to Step 4. **Optionally** you can download genomes from NCBI.
 ```bash
 #######################################
 #                                     #
@@ -52,41 +52,41 @@ cd easy_pangenome
 #                                     #
 #######################################
 # Copy the fasta files to 01-genomes_raw
-# NOTE: The filenames should start with a letter and contain only alphanumeric and underscore (_) characters.
+# NOTE: The filenames should only contain alphanumeric and underscore (_) characters.
 cp path/to/my_genomic_files/*.fa $PWD/easy_pangenome/01-genomes_raw
 
-# Create a list with the filenames (these will be used as IDs for the genomes throughout the pipeline)
+# Create a list with the filenames.
 ls 01-genomes_raw | sed -e 's/\.fa//' > genome_ids.txt
 
-###############################
-#                             #
-# I want to download genomes. #
-#                             #
-###############################
-# Here I will download all RefSeq Buchnera genomes that are assembled to chromosome level (n=26; date March 14,2024)
+#######################################
+#                                     #
+#     I want to download genomes.     #
+#                                     #
+#######################################
+# I will use Buchnera as example and download all RefSeq genomes assembled to chromosome level (n=26; date March 21,2024)
 datasets download genome taxon "Buchnera" --include genome --assembly-level chromosome --assembly-source 'RefSeq' --filename 00-download_genomes/genomic_file-Buchnera.zip
 
 # Unzip file
-unzip 00-download_genomes/genomic_file-Buchnera.zip -d 00-download_genomes
+unzip 00-download._genomes/genomic_file-Buchnera.zip -d 00-download_genomes
 
-# Create list with the Assembly IDs (these will be used as IDs for the genomes)
+# Create list with the Assembly IDs.
 ls -1 -d 00-download_genomes/ncbi_dataset/data/*/ | sed -e 's/.*data//' |sed -e 's/\///g' | sed -e 's/\./_/' > genome_ids.txt
 
-# Rename files
+# Rename files.
 for g_id in `cat genome_ids.txt`
 do
 assembly_id=$( echo "$g_id" | rev | sed -e 's/_/\./' | rev ) # Variable with original Assembly id
-old_genome_file_name=$( ls 00-download_genomes/ncbi_dataset/data/${assembly_id}/ ) # Variable to store old name
+old_genome_file_name=$( ls 00-download_genomes/ncbi_dataset/data/${assembly_id}/*_genomic.fna ) # Variable to store old name
 new_genome_file_name=${g_id}.fa # Variable to store new name
 # Copy the genomic sequence and change name
-cp 00-download_genomes/ncbi_dataset/data/${assembly_id}/${old_genome_file_name} 01-genomes_raw/$new_genome_file_name
+cp ${old_genome_file_name} 01-genomes_raw/$new_genome_file_name
 done
 
 ```
 4. Prepare genomes and contigs databases
 ```bash
 # Reformat fasta files.
-# This program will take your input fasta file and reformat it. 1) The headers will be simplified using as prefix the genome ID, 2) contigs smaller than 2000 nucelotides will be removed,  3)  non-canonical bases other than {A,T,C,G}, will be subtituted for N's, and 4) a file reporting the changes to the headers will be produced.
+# EXPLANATION. This program will take your input fasta file and reformat it. 1) The headers will be simplified using as prefix the genome ID, 2) contigs smaller than 2000 nucelotides will be removed, 3) non-canonical bases other than {A,T,C,G}, will be subtituted for N's, and 4) a file reporting the changes to the headers will be produced.
 for g_id in `cat genome_ids.txt`
 do
 anvi-script-reformat-fasta 01-genomes_raw/${g_id}.fa \
@@ -125,16 +125,16 @@ for g_id in `cat genome_ids.txt`
 do
 exec_th=4 # Number of threads (modify accordingly)
 contigs_db=03-contigs_db/${g_id}-contigs.db
-anvi-run-cazymes -c $contigs_db --num-threads $threads # CAZymes
-anvi-run-interacdome -c 03-contigs_db/${g_id}-contigs.db --num-threads $threads --output-file-prefix 02-genomes_edited/${g_id}-interacdome # interaction domains
-anvi-run-kegg-kofams -c 03-contigs_db/${g_id}-contigs.db --num-threads $threads # KOfams KEGG
-anvi-run-pfams -c 03-contigs_db/${g_id}-contigs.db --num-threads $threads # Pfams
-anvi-run-ncbi-cogs -c 03-contigs_db/${g_id}-contigs.db --num-threads $threads # COG20 NCBI COGs
+anvi-run-cazymes -c $contigs_db --num-threads $exec_th # CAZymes
+anvi-run-interacdome -c 03-contigs_db/${g_id}-contigs.db --num-threads $exec_th --output-file-prefix 99-data/${g_id}-interacdome # interaction domains
+anvi-run-kegg-kofams -c 03-contigs_db/${g_id}-contigs.db --num-threads $exec_th # KOfams KEGG
+anvi-run-pfams -c 03-contigs_db/${g_id}-contigs.db --num-threads $exec_th # Pfams
+anvi-run-ncbi-cogs -c 03-contigs_db/${g_id}-contigs.db --num-threads $exec_th # COG20 NCBI COGs
 done
 ```
 6. Create pangenome.
 ```bash
-# First you will need to create an "external" ini file. This is a two-column TSV file. The first column is the name you want to give to each genome (here i will use the genome ID, but you could give them a different name -alhpanumeric only). The second column is the full path to its contigs database.
+# Create an "external" ini file. This is a two-column TSV file. The first column is the name you want to give to each genome (here, I will use the genome ID, but you could give them a different name - alhpanumeric only). The second column is the full path to its contigs database.
 echo -e "name\tcontigs_db_path" > 04-pangenome/external-ini.txt # Do not change headers.
 for g_id in `cat genome_ids.txt`
 do
@@ -180,5 +180,5 @@ anvi-display-pan -g 04-pangenome/Buchnera_ref-GENOMES.db -p 04-pangenome/pan_db/
 anvi-summarize -g 04-pangenome/Buchnera_ref-GENOMES.db \
     -p 04-pangenome/pan_db/Buchnera_ref-PAN.db \
     --collection-name cas3 \
-    --output-dir 05-pan_summary/cas3-Buchnera_ref-summary
+    --output-dir 05-pan_summary/Buchnera_ref-pan_sum-cas3
 ```
