@@ -153,7 +153,7 @@ anvi-pan-genome -g 04-pangenome/Buchnera_ref-GENOMES.db \
     --align-with muscle \
     --project-name "Buchnera_ref" \
     --output-dir 04-pangenome/pan_db \
-    --num-threads 30 \
+    --num-threads 4 \
     --enforce-hierarchical-clustering
 
 # [Optional but exciting] Compute average nucelotide identity (ANI) and add it the pangenome (results will also be stored in a separete folder).
@@ -162,7 +162,7 @@ anvi-compute-genome-similarity -e 04-pangenome/external-ini.txt \
     --pan-db 04-pangenome/pan_db/Buchnera_ref-PAN.db \
     --program pyANI \
     --method ANIb \
-    --num-threads 10
+    --num-threads 4
 
 ```
 7. Display pangenome, edit figure and find gene clusters of intereset
