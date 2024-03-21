@@ -1,11 +1,27 @@
 # Simple Pipeline on How to Create a Pangenome with Anvi'o
-The folowing lines describe **simple steps** to create a **pangenome** using anvi'o platform. For an extensive description of the workflow and insights into each program please visit (and read) anvi'o documentation website [Anvi'o pangenome workflow](https://merenlab.org/2016/11/08/pangenomics-v2/). <br> If you use this pipeline please reference the repository and cite Anvi'o and third party programs accordingly.
+The folowing lines describe **simple steps** to create a **pangenome** using anvi'o platform. For an extensive description of the workflow and insights into each program please visit (and read) anvi'o documentation website [Anvi'o pangenome workflow](https://merenlab.org/2016/11/08/pangenomics-v2/). <br> If you use this pipeline please acknowledge it by including the link to the repository(https://github.com/juliantom/Simple_steps_pangenome), also cite Anvi'o and third party programs accordingly.
 
 ### Pipepline
 1. Install [Anvi'o](https://anvio.org/install/) and [NCBI datasets](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/) if not in your system.
 ```bash
-# Install ncbi-download genomes
+# As reference, I am using anvio v8
+anvi-self-test -v
+
+# Anvi'o .......................................: marie (v8)
+# Python .......................................: 3.10.13
+
+# Profile database .............................: 38
+# Contigs database .............................: 21
+# Pan database .................................: 16
+# Genome data storage ..........................: 7
+# Auxiliary data storage .......................: 2
+# Structure database ...........................: 2
+# Metabolic modules database ...................: 4
+# tRNA-seq database ............................: 2
+
+# Install ncbi-download genomes. The version I use is: 16.6.0
 conda install -c conda-forge ncbi-datasets-cli
+
 ```
 2. Prepare the workspace where the magic will happen.
 ```bash
