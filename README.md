@@ -1,4 +1,4 @@
-# Simple Pipeline on How to Create a Pangenome with Anvi'o
+# A Simple Pipeline for Creating a Pangenome with Anvi'o
 The folowing file contains **simple steps** to download genomes and create a **pangenome** using anvi'o platform. 
 
 ### Why did I made this space?
