@@ -170,11 +170,19 @@ anvi-compute-genome-similarity -e 04-pangenome/external-ini.txt \
 # Display pangenome, edit figure, store bins and save to a collection. Save edits as a state.
 anvi-display-pan -g 04-pangenome/Buchnera_ref-GENOMES.db -p 04-pangenome/pan_db/Buchnera_ref-PAN.db
 
-# I categorized gene into three groups (Core, Accessory, and Singletons) and store this collection as "cas3". Core= gene cluster present in all (100%) genomes; Accessory=gene cluster present in more than one and less than all genomes; Singletons= gene cluster present at most in one genome. 
-# The display was stored as "simple_view"
-# I generated an on-the-fly phylogeny by concatenating all single-copy core genes and running "generate phylogeny". The display was stored as "simple_view_with_phylo"
+# STATE
+# Edit parameters, colors, size word, etc.
+# Give a name to the state (e.g., "simple_state") and save.
+
+# COLLECTION
+# Add gene clusters to bins and store collection.
+# Placed gene clusters into three groups: Core, Accessory, and Singletons.
+#   Core: present in all (100%) genomes
+#   Accessory: present in more than one and less than all genomes
+#   Singletons: present at most in one genome
+# Store the collection as "cas3".
 ```
-8. Produce summary tables for the pangenome. By including the collection, the table will contain gene-level information linking them to their gene-clusters, genomes, sequence, functions, and collection.
+8. Summarize the pangenome info to produce tables with the gene & genome info.
 ```bash
 # Summarize pangenome. Use collection.
 anvi-summarize -g 04-pangenome/Buchnera_ref-GENOMES.db \
