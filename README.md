@@ -70,6 +70,7 @@ anvi-script-reformat-fasta 01-genomes_raw/${g_id}.fa \
     --prefix ${g_id} \
     --min-len 2000 \
     --seq-type NT
+osascript -e "display notification \"Genome $g_id: done\" with title \"Anvio reformat fasta completed\""
 done
 
 # Create contigs DB for each genome.
@@ -79,6 +80,7 @@ anvi-gen-contigs-database -f 02-genomes_edited/${g_id}-edited.fa \
     -n ${g_id} \
     --num-threads 10 \
     --output-db-path 03-contigs_db/${g_id}-contigs.db
+osascript -e "display notification \"Genome $g_id: done\" with title \"Anvio contigs DB created\""
 done
 ```
 5. Annotate genomes.
@@ -90,6 +92,7 @@ contigs_db=03-contigs_db/${g_id}-contigs.db
 anvi-run-hmms -c $contigs_db --num-threads 10 --also-scan-trnas # Marker genes: Bac 71, Archeae, BUSCO, 16S rRNA genes, and scan for tRNAs
 anvi-run-scg-taxonomy -c $contigs_db --num-threads 10 # Single-copy core gene taxonomy (GTDB)
 anvi-run-trna-taxonomy -c $contigs_db --num-threads 10 # tRNA gene taxonomy (GTDB)
+osascript -e "display notification \"Genome $g_id: done\" with title \"Anvio run hmms, scg & tRNA completed\""
 done
 
 # FUNCTIONAL ANNOTATION (check databases are installed and programs available and adjust if necessary)
@@ -102,6 +105,7 @@ anvi-run-interacdome -c 03-contigs_db/${g_id}-contigs.db --num-threads $threads 
 anvi-run-kegg-kofams -c 03-contigs_db/${g_id}-contigs.db --num-threads $threads # KOfams KEGG
 anvi-run-pfams -c 03-contigs_db/${g_id}-contigs.db --num-threads $threads # Pfams
 anvi-run-ncbi-cogs -c 03-contigs_db/${g_id}-contigs.db --num-threads $threads # COG20 NCBI COGs
+osascript -e "display notification \"Genome $g_id: done\" with title \"Anvio functional annotatation completed\""
 done
 ```
 6. Create pangenome.
