@@ -38,11 +38,11 @@ ls 01-genomes_raw | sed -e 's/\.fa//' > genome_ids.txt
 # I want to download genomes. #
 #                             #
 ###############################
-# Here I will download all RefSeq Buchnera genomes that are assembled to chromosome level (n=26; date March 14,2024)
-datasets download genome taxon "Buchnera" --include genome --assembly-level chromosome --assembly-source 'RefSeq' --filename 00-download_genomes/genomic_file-Buchnera.zip
+# Here I will download all RefSeq Leptotrichia wadei genomes that are assembled to chromosome level (n=26; date March 14,2024)
+datasets download genome taxon "Leptotrichia wadei" --include genome --assembly-level complete --assembly-source 'RefSeq' --filename 00-download_genomes/genomic_file-Leptotrichia_wadei.zip
 
 # Unzip file
-unzip 00-download_genomes/genomic_file-Buchnera.zip -d 00-download_genomes
+unzip 00-download_genomes/genomic_file-Leptotrichia_wadei.zip -d 00-download_genomes
 
 # Create list of Assembly IDs (these will be used as IDs for the genomes)
 ls -1 -d 00-download_genomes/ncbi_dataset/data/*/ | sed -e 's/.*data//' |sed -e 's/\///g'  | sed -e 's/\./_/' > genome_ids.txt
@@ -118,15 +118,15 @@ echo -e "$g_id\t$PWD/03-contigs_db/$g_id-contigs.db" >> 04-pangenome/external-in
 done
 
 # Create a storage database for the genomes. This will store the information (gene calls, annotation, name) of all your genomes in one single database. The output must have '-GENOMES.db' as ending.
-anvi-gen-genomes-storage -e 04-pangenome/external-ini.txt -o 04-pangenome/Buchnera_ref-GENOMES.db
+anvi-gen-genomes-storage -e 04-pangenome/external-ini.txt -o 04-pangenome/Leptotrichia_wadei_ref-GENOMES.db
 
 # Run the pangenome. This command will 1) compare every pair of genes (amino acid sequences) from your genomes using ncbi blast, 2) identify genes that are similar using a bitscore (minbit = 0.5), 3) cluster the genes by implementing mcl clustering algorithm (mcl=10, 10 used for noot closlely related organisms such as genus or family level), 4) perform multiple alignment for each gene cluster. If the genomes are highly diverse, a large amount of gene clusters will be produced; anvi'o will not perform hierarchical clustering if more than 20,000 gene clusters are produced unless it is enforced to do so (But it might take a long time).
-anvi-pan-genome -g 04-pangenome/Buchnera_ref-GENOMES.db \
+anvi-pan-genome -g 04-pangenome/Leptotrichia_wadei_ref-GENOMES.db \
     --use-ncbi-blast \
     --minbit 0.5 \
     --mcl-inflation 10 \
     --align-with muscle \
-    --project-name "Buchnera_ref" \
+    --project-name "Leptotrichia_wadei_ref" \
     --output-dir 04-pangenome/pan_db \
     --num-threads 30 \
     --enforce-hierarchical-clustering
@@ -135,7 +135,7 @@ anvi-pan-genome -g 04-pangenome/Buchnera_ref-GENOMES.db \
 # This will compute the percentage of identity among all genomic sequences in your pangenome. Results will be stored in a dedicated folder and appended to the pangenome database for easy display. There are multiple parameters that can be furhter adjusted.
 anvi-compute-genome-similarity -e 04-pangenome/external-ini.txt \
     -o 04-pangenome/genome_similarity \
-    --pan-db 04-pangenome/pan_db/Buchnera_ref-PAN.db \
+    --pan-db 04-pangenome/pan_db/Leptotrichia_wadei_ref-PAN.db \
     --program pyANI \
     --method ANIb \
     --num-threads 10
@@ -144,7 +144,7 @@ anvi-compute-genome-similarity -e 04-pangenome/external-ini.txt \
 7. Display pangenome, edit figure and find gene clusters of intereset
 ```bash
 # Display pangenome, edit figure, store bins and save to a collection. Save edits as a state.
-anvi-display-pan -g 04-pangenome/Buchnera_ref-GENOMES.db -p 04-pangenome/pan_db/Buchnera_ref-PAN.db
+anvi-display-pan -g 04-pangenome/Leptotrichia_wadei_ref-GENOMES.db -p 04-pangenome/pan_db/Leptotrichia_wadei_ref-PAN.db
 
 # I categorized gene into three groups (Core, Accessory, and Singletons) and store this collection as "cas3". Core= gene cluster present in all (100%) genomes; Accessory=gene cluster present in more than one and less than all genomes; Singletons= gene cluster present at most in one genome. 
 # The display was stored as "simple_view"
@@ -153,8 +153,8 @@ anvi-display-pan -g 04-pangenome/Buchnera_ref-GENOMES.db -p 04-pangenome/pan_db/
 8. Produce summary tables for the pangenome. By including the collection, the table will contain gene-level information linking them to their gene-clusters, genomes, sequence, functions, and collection.
 ```bash
 # Summarize pangenome. Use collection.
-anvi-summarize -g 04-pangenome/Buchnera_ref-GENOMES.db \
-    -p 04-pangenome/pan_db/Buchnera_ref-PAN.db \
+anvi-summarize -g 04-pangenome/Leptotrichia_wadei_ref-GENOMES.db \
+    -p 04-pangenome/pan_db/Leptotrichia_wadei_ref-PAN.db \
     --collection-name cas3 \
-    --output-dir 05-pan_summary/Buchnera_ref-cas3-SUMMARY
+    --output-dir 05-pan_summary/Leptotrichia_wadei_ref-cas3-SUMMARY
 ```
